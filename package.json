@@ -4,6 +4,7 @@
   "description": "Programa para contar el numero de lineas de codigo",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/ccamilobedoya/Pruebas-Prog-2-LOC/issues"
   },
-  "homepage": "https://github.com/ccamilobedoya/Pruebas-Prog-2-LOC"
+  "homepage": "https://github.com/ccamilobedoya/Pruebas-Prog-2-LOC",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
