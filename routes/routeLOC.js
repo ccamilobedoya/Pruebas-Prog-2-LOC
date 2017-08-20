@@ -12,7 +12,7 @@ var path   = require("path");
 
 // Ruta de inicio
 router.get('/', function(req, res) {
-res.sendFile('form.html', {root: 'public/html/LOC'});
+  res.sendFile('form.html', {root: 'public/html/LOC'});
 });
 
 
