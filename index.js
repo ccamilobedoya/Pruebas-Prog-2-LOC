@@ -19,6 +19,10 @@ var app = express();
 // Uso de rutas
 app.use('/loc', routeLOC);
 
+
+//ruta para cargar el formulario
+app.use('/static', express.static(__dirname + '/public'));
+
 // Inicio del servidor
 app.listen(PORT, function () {
   console.log('Listening on localhost:' + PORT);

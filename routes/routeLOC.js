@@ -7,12 +7,14 @@
 
 var express = require('express');
 var router = express.Router();
+var path   = require("path");
 
 
 // Ruta de inicio
 router.get('/', function(req, res) {
-  res.send('LOC');
+res.sendFile('/static/html/LOC/form.html');
 });
+
 
 // Exporta todo lo relacionado a la variable router
 module.exports = router;
