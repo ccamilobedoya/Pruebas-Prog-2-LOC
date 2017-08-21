@@ -21,7 +21,13 @@ router.use(function(req, res, next) {
 // Solo se necesita recibir archivos
 // Post para subir, con ruta /loc/api/upload
 router.post('/upload', function(req, res) {
-  fileManager.handleUpload(req);
+  fileManager.saveFiles(req, function(err, results) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(results);
+    }
+  });
 });
 
 
