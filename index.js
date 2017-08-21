@@ -17,11 +17,15 @@ var apiLOC = require('./routes/apiLOC');
 // Variables
 var app = express();
 
+// Motor de plantillas html
+app.set('views', './views');
+app.set('view engine', 'pug');
+
 // Uso de rutas
 app.use('/loc', routeLOC);
 app.use('/loc/api', apiLOC);
 
-//ruta para cargar el formulario
+// Ruta para cargar archivos estaticos
 app.use('/static', express.static(__dirname + '/public'));
 
 // Inicio del servidor
