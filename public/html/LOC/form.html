@@ -2,10 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/static/CSS/style.css">
-    <title>Conteo líneas de código</title>
+    <link   rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <link   rel="stylesheet" href="/static/bootstrap/css/bootstrap-theme.css">
+    <link   rel="stylesheet" href="/static/dropzone/basic.css">
+    <link   rel="stylesheet" href="/static/dropzone/dropzone.css">
+    <link   rel="stylesheet" href="/static/css/style.css">
+    <script type="text/javascript" src="/static/bootstrap/js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/dropzone/dropzone.js"></script>
+
+
+  <title>Programa 2 -LOC</title>
   </head>
   <body>
-    LALALALA
+  <div class="fuente">
+    <h1>Contador de líneas de código de Node.js</h1>
+    </div>
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="container"> <br />
+            <div class="row">
+            	<div class="col-sm-8">
+    				     <div class="panel-body">
+					<br />
+					<!-- Zona para arratrar el archivo -->
+          <form action="/loc/api/upload" method="post" class="dropzone" >
+            <img src="/static/images/RedCloud.png">
+              <div class="fallback">
+                <input name="file" type="file" multiple />
+                </div>
+          </form>
+					<br />
+				</div>
+		</div>
+	</div>
+</div>
+</div>
   </body>
 </html>
