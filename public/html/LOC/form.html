@@ -26,11 +26,11 @@
     				     <div class="panel-body">
 					<br />
 					<!-- Zona para arratrar el archivo -->
-          <form action="/loc/api/upload" method="post" class="dropzone" >
+          <form action="/loc/api/upload" enctype="multipart/form-data" method="post" class="dropzone" >
             <img src="/static/images/RedCloud.png">
               <div class="fallback">
                 <input name="file" type="file" multiple />
-                </div>
+              </div>
           </form>
 					<br />
 				</div>
