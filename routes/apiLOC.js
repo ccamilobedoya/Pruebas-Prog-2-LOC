@@ -26,6 +26,13 @@ router.post('/upload', function(req, res) {
       console.log(err);
     } else {
       console.log(results);
+      fileManager.extractTextFromFiles(results, function(err, texts){
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(texts);
+        }
+      })
     }
   });
 });
