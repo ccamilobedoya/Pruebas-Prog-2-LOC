@@ -25,14 +25,13 @@
 
 body{
 
-background: rgb(238, 102, 72);
+background: #de3434;
 overflow: hidden;
 }
 
 .modal-dialog {
   position: relative;
-  width: auto;
-  margin: 100px 280px 200px 280px;
+  width: 60%;
 }
 
 .fuente{
@@ -41,3 +40,12 @@ text-align:center;
 margin-top: 30px;
 font-family: fantasy;
 }
+
+.dropzone {
+  min-height: 150px;
+  border-style: dashed;
+  border-color: rgb(222, 129, 90);;
+  background: white;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
+   }
