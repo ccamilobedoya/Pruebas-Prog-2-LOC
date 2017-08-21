@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/ccamilobedoya/Pruebas-Prog-2-LOC",
   "dependencies": {
+    "async": "^2.5.0",
     "express": "^4.15.4",
-    "formidable": "^1.1.1"
+    "formidable": "^1.1.1",
+    "textract": "^2.1.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1"
