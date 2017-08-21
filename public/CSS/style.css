@@ -37,7 +37,7 @@ overflow: hidden;
 .fuente{
 color: white;
 text-align:center;
-margin-top: 30px;
+margin-top: 40px;
 font-family: fantasy;
 }
 
@@ -47,5 +47,7 @@ font-family: fantasy;
   border-color: rgb(222, 129, 90);;
   background: white;
   width: 100%;
-  margin: 10px 10px 10px 10px;
    }
+.container{
+  width: 100%;
+}
