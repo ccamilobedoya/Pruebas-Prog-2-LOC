@@ -7,6 +7,7 @@
 
 var express = require('express');
 var fileManager = require('../LOC/fileManager');
+var countingLOC = require('../LOC/countingLOC');
 var router = express.Router();
 
 // Se ejecuta siempre que se accede a la ruta /loc/api
@@ -25,12 +26,17 @@ router.post('/upload', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(results);
+      //console.log(results);
       fileManager.extractTextFromFiles(results, function(err, texts){
         if (err) {
           console.log(err);
         } else {
-          console.log(texts);
+          //console.log(texts);
+          //res.render('LOCresults', { title: 'Hey', message: 'algo' });
+
+          countingLOC.countAll(results, texts, function(err, information) {
+            //console.log('StringFiles: \n' + information[0].functions);
+          });
         }
       })
     }
