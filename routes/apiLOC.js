@@ -34,8 +34,8 @@ router.post('/upload', function(req, res) {
           //console.log(texts);
           //res.render('LOCresults', { title: 'Hey', message: 'algo' });
 
-          countingLOC.countAll(results, texts, function(err, information) {
-            //console.log('StringFiles: \n' + information[0].functions);
+          countingLOC.countAll(results, texts, function(err, info) {
+            res.render('LOCresults', {information: info});
           });
         }
       })
