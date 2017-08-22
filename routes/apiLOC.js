@@ -35,7 +35,7 @@ router.post('/upload', function(req, res) {
           //res.render('LOCresults', { title: 'Hey', message: 'algo' });
 
           countingLOC.countAll(results, texts, function(err, info) {
-            console.log(info[0].vars);
+            //console.log(info[0].vars);
             res.render('LOCresults', {information: info});
           });
         }

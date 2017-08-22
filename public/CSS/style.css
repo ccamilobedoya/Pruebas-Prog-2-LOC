@@ -83,3 +83,48 @@ font-family: fantasy;
   margin-bottom: 0;
   font-size: 14px;
 }
+
+form{
+  position: relative;
+  width: 100%;
+  border: 4px dashed #e64e4e;
+}
+form p{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 170px;
+  color: #e64e4e;
+  font-family: Arial;
+}
+form input{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+form button{
+  margin: 0;
+  color: #fff;
+  background: #16a085;
+  border: none;
+  width: 100%;
+  height: 35px;
+  margin-top: 0px;
+  border-radius: 4px;
+  border-bottom: 4px solid #117A60;
+  transition: all .2s ease;
+  outline: none;
+  position: absolute;
+  bottom: -60px
+}
+form button:hover{
+  background: #149174;
+	color: #0C5645;
+}
+form button:active{
+  border:0;
+}
