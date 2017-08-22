@@ -24,7 +24,14 @@ function countAll(files, texts, information) {
     var _vars = (texts[key].match(/\bvar\b/g) || []).length;
     var _consts = (texts[key].match(/\bconst\b/g) || []).length;
     var _functions = (texts[key].match(/\bfunction\b/g) || []).length;
-
+    
+    if (files[key].name == 'countingLOC.js'){
+    	_keywords = _keywords - 15;
+    	_vars--;
+    	_consts--;
+    	_functions--;
+    }
+    
     // Objeto temporal que almacena los datos importantes de cada archivo
     var fileInfo = {
       name : files[key].name,
