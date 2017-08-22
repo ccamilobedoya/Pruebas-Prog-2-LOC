@@ -10,6 +10,8 @@
     <script type="text/javascript" src="/static/bootstrap/js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="/static/dropzone/dropzone.js"></script>
+    <script type="text/javascript" src="/static/js/controlador.js"></script>
+
 
 
   <title>Programa 2 -LOC</title>
@@ -21,20 +23,20 @@
        <div class="modal-dialog">
          <div class="modal-content">
            <div class="container"> <br />
-          <div class="col-sm-12">
+             <div class="col-sm-12">
+					          <br />
+    					<!-- Zona para arratrar el archivo -->
+                    <form action="/loc/api/upload" enctype="multipart/form-data" tagName="myForm" method="post" class="dropzone" >
+                      <div align=center>
+                        <img src="/static/images/RedCloud.png">
+                      </div>
+                      <div class="fallback">
+                          <input name="file" type="file" multiple />
+                      </div>
+                    </form>
 					<br />
-					<!-- Zona para arratrar el archivo -->
-          <form action="/loc/api/upload" enctype="multipart/form-data" method="post" class="dropzone" >
-          <div align=center>
-            <img src="/static/images/RedCloud.png">
-          </div>
-              <div class="fallback">
-                <input name="file" type="file" multiple />
-              </div>
-          </form>
-					<br />
-	</div>
-</div>
-</div>
+	         </div>
+         </div>
+       </div>
   </body>
 </html>
