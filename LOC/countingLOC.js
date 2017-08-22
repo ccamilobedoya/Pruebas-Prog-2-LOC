@@ -45,7 +45,7 @@ function countAll(files, texts, information) {
     info.push(fileInfo);
     cb();
   }, function(err){
-    if (info.length === 0 || info !== 'undefined' || info == null){
+    if (info.length === 0 || info === 'undefined' || info == null){
       information('Array vacio de texto. ' + err, null);
     } else {
       information(null, info);

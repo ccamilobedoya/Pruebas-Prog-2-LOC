@@ -36,7 +36,11 @@ router.post('/upload', function(req, res) {
 
           countingLOC.countAll(results, texts, function(err, info) {
             //console.log(info[0].vars);
-            res.render('LOCresults', {information: info});
+            if (err) {
+              console.log(err);
+            } else {
+              res.render('LOCresults', {information: info});
+            }
           });
         }
       })
