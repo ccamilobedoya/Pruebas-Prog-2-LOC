@@ -16,7 +16,6 @@ function countAll(files, texts, information) {
 
   // Loop para contar por cada archivo
   async.forEachOf(texts, function(value, key, cb){
-    //info[key].name = files[key].name;
     //texts[key] = texts[key].replace(/ /g, '');
     //texts[key] = texts[key].replace(/};/g, '');
     //texts[key] = texts[key].replace(/);/g, '');

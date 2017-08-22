@@ -24,6 +24,8 @@ app.set('view engine', 'pug');
 // Uso de rutas
 app.use('/loc', routeLOC);
 app.use('/loc/api', apiLOC);
+// Esta es la ruta por defecto, modificar cuando haya algun menu
+app.use('/', routeLOC);
 
 // Ruta para cargar archivos estaticos
 app.use('/static', express.static(__dirname + '/public'));
