@@ -120,7 +120,7 @@
       withCredentials: false,
       timeout: 30000,
       parallelUploads: 3,
-      uploadMultiple: true,
+      uploadMultiple: false,
       maxFilesize: 256,
       paramName: "file",
       createImageThumbnails: true,
