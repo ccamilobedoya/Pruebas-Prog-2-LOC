@@ -27,12 +27,20 @@ function saveFiles(req, results) {
 
   // Cada que encuentre un archivo lo guarda en el array
   form.on('file', function(name, file) {
-    fileArray.push(file);
+    if (file.type == 'application/octet-stream' ||
+        file.type == 'image/png' ||
+        file.type == 'image/jpeg' ||
+        file.type == 'image/jpg') {
+      results('Extension del archivo ' + file.name + ' no es valido', null);
+      return;
+    } else {
+      fileArray.push(file);
+    }
   });
   // Si hay un error
   form.on('error', function(err) {
     console.log('Error en saveFiles: ' + err);
-    results('Error en savefiles: ' + err, null);
+    results('Error al intentar guardar uno de los archivos, quizas sea demasiado grande', null);
   });
   // Cuando guarde todos los archivos active la funcion callback
   form.on('end', function() {
@@ -49,12 +57,12 @@ function extractTextFromFiles(files, results) {
   async.each(files, function(file, callback){
     // Ruta del archivo guardado
     var filePath = path.resolve('./' + file.path);
-    
+
     // Convierte el contenido del archivo en un string
     textract.fromFileWithPath(filePath, function(err, text) {
       if (err) {
-        console.log('Error extrayendo texto: ' + err);
-        results('Error extrayendo texto: ' + err, null);
+        //console.log('Error extrayendo texto: ' + err);
+        results('El archivo ' + file.name + ' está vacio o no se puede leer', null);
       } else {
         // Guarda el texto actual
         textArray.push(text);
@@ -65,7 +73,7 @@ function extractTextFromFiles(files, results) {
   // Funcion que se ejecuta cuando todas las iteraciones terminan
   }, function(err) {
     if (err) {
-      results('Error extrayendo texto: ' + err);
+      results('No se ha podido obtener texto de uno de los archivos ingresados');
       console.log('Error extrayendo texto: ' + err);
     } else {
       results(null, textArray);

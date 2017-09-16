@@ -24,12 +24,12 @@ router.use(function(req, res, next) {
 router.post('/upload', function(req, res) {
   fileManager.saveFiles(req, function(err, results) {
     if (err) {
-      console.log(err);
+      res.render('ErrorPage', {error: err});
     } else {
       //console.log(results);
       fileManager.extractTextFromFiles(results, function(err, texts){
         if (err) {
-          console.log(err);
+          res.render('ErrorPage', {error: err});
         } else {
           //console.log(texts);
           //res.render('LOCresults', { title: 'Hey', message: 'algo' });
@@ -37,7 +37,7 @@ router.post('/upload', function(req, res) {
           countingLOC.countAll(results, texts, function(err, info) {
             //console.log(info[0].vars);
             if (err) {
-              console.log(err);
+              res.render('ErrorPage', {error: err});
             } else {
               res.render('LOCresults', {information: info});
             }

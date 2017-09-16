@@ -11,13 +11,29 @@ describe('El modulo Gestor de Archivos', () => {
     chai.expect(fileManager.extractTextFromFiles).to.be.a('function');
   });
 
-  describe('En la funcion extractTextFromFiles', function(){
+  // Hay que imitar un post ... aun no se como
+  describe('En la funcion que guarda los archivos', function(){
+    it('Los archivos que se reciben deben tener extension', () => {
+        var file = [{path:'testObjects/noExtFile'}];
+        fileManager.saveFiles(req, function(err, results){
+          chai.expect(err).to.be.null;
+        });
+      });
+  });
+
+  describe('En la funcion para extraer texto de los archivos', function(){
+    it('Los archivos no deben estar vacios', () => {
+        var file = [{path:'testObjects/emptyFile.txt'}];
+        fileManager.extractTextFromFiles(file, function(err, results){
+          chai.expect(err).to.not.be.null;
+    });
     it('Los datos subidos deben ser string', () => {
         var file = [{path:'../LOC/fileManager'}];
         fileManager.extractTextFromFiles(file, function(err, results){
-          resultsTest =results;
+          resultsTest = results;
           chai.expect(resultsTest).to.be.a('string');
+        });
     });
+   });
   });
- });
 });
